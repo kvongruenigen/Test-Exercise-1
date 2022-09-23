@@ -1,0 +1,35 @@
+---
+title: "Exercise 1 Part B"
+format:
+  html:
+    theme: default
+---
+
+## Task
+
+Create an HTML document with R code that samples 100 values from a negative binomial distribution (say, mu=10, dispersion=2; using the parameterisation with mean=mu and variance=mu+mu\^2\*dispersion); create a histogram of sampled data on both the linear and log \[or maybe log(x+1) due to zeros\] scale; Write 1-2 sentences to describe your steps (ideally also with section headings) and report the mean and variance of the sample in line in the text.
+
+## Solution
+
+Sample 100 values from given distribution:
+
+```{r}
+x_values <- rnbinom(100, size = 2, mu = 10)
+par(mfrow = c(1,2))
+hist(x_values)
+hist(log(x_values))
+
+```
+
+The mean is of the sample is:
+
+```{r}
+mean(x_values)
+
+```
+
+with a variance of:
+
+```{r}
+var(x_values)
+```
